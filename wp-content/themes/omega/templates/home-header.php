@@ -1,0 +1,1 @@
+<?php echo do_shortcode('[wooslider slide_page="homepage-slider" slider_type="slides" limit="3"]'); ?>

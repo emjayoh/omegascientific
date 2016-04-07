@@ -1,0 +1,63 @@
+/*----------------------------------------------
+ RESPONSIVE @MEDIA QUERIES
+ ----------------------------------------------*/
+
+/* 1200px and up */
+@media (min-width:1200px) {
+
+}
+
+/* 980px and up */
+@media (min-width:980px) {
+
+}
+
+/* 979px and under */
+@media (max-width:979px) {
+
+}
+
+/* Resolutions Greater than <769px */
+@media (min-width:768px) {
+
+}
+
+/* In Between Resolutions */
+@media (min-width:768px) and (max-width:979px) {
+	#phone-wrap {
+		width: 125px;
+	}
+}
+
+@media (min-width:980px) and (max-width:1199px) {
+	#menu-item-626 {
+		display: none !important;
+	}
+}
+
+
+/* Max Width >767px */
+@media (max-width:767px) {
+	body {padding:0}
+	.mobile-container {padding-left: 5px; padding-right: 5px;}
+	#header-right-wrap {
+		float: none;
+		display: block;
+	}
+}
+
+
+/* iPhone Vertical in Between Widths */
+@media (max-width:400px) {
+
+}
+
+/* iPhone Vertical */
+@media (max-width:320px) {
+
+}
+
+/* Super Small */
+@media (max-width:300px) {
+
+}

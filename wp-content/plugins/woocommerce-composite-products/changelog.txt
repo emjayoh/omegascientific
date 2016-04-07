@@ -1,0 +1,53 @@
+*** WooCommerce Composite Products ***
+
+2013.07.23 - version 1.3.3
+ * Fix - Fixed zero price error in bto-item-options template.
+
+2013.07.19 - version 1.3.2
+ * Fix - Fixed cart totals initialisation due to missing filter.
+
+2013.07.01 - version 1.3.1
+ * Tweak - Some filters cleaned up.
+ * Fix - Fixed quantity saving bug introduced in 1.3.0.
+
+2013.06.29 - version 1.3.0
+ * Feature - Composite components can now have discounts in per-item pricing mode.
+ * Fix - Fixed variation selection bug for single-item Components.
+
+2013.06.26 - version 1.2.0
+ * Initial Release
+ * Tweak - Compatibility classes feature dropped in favour of a new system (in development).
+
+2013.06.24 - version 1.1.3
+ * Tweak - Renamed 'Properties' to 'Components'.
+ * Fix - Fixed disabled component options when using single-page mode.
+ * Fix - Cart tax labels in per-item pricing mode.
+
+2013.06.19 - version 1.1.2
+ * Tweak - Prevent composite metadata from displaying in order line items.
+ * Tweak - Replaced product title hooks.
+ * Tweak - Implement some forward compatibility with WC 2.1.
+ * Fix - Drop-down product prices in per-item pricing mode no longer use html.
+
+2013.06.16 - version 1.1.1
+ * Fix - Renamed product title hooks.
+
+2013.06.11 - version 1.1.0
+ * Fix - PHP notices fixed.
+ * Fix - Paged UI JS navigation issues.
+
+2013.06.9 - version 1.0.4
+ * Fix - Variable custom attributes fix.
+
+2013.05.31 - version 1.0.3
+ * Tweak - Filtered order items count.
+
+2013.05.23 - version 1.0.2
+ * Fix - Undefined price description.
+ * Tweak - Front end CSS.
+
+2013.05.20 - version 1.0.1
+ * Tweak - Streamlined admin area - added notifications for creating Composite Properties and Compatibility Classes.
+
+2013.05.15 - version 1.0.0
+ * Initial Release.

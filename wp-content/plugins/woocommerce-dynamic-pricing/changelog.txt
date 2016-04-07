@@ -1,0 +1,160 @@
+*** Dynamic Pricing Changelog ***
+2013.06.29 - version 2.3.4
+	* Update: Re-enable discount price display throughout the store on all products when rules apply. 
+
+2013.06.23 - version 2.3.3
+	* Update:  Show discounts on variation price HTML when specific variations are targeted. 
+	* Fix: Show correct product price in cart with strike through. 
+
+2013.06.13 - version 2.3.2
+	* Fix: Update for special offer advanced category pricing to process various edge case combinations correctly. 
+
+2013.06.05 - version 2.3.1
+	* New: Added Groups plugin support to all advanced rules. 
+
+2013.06.04 - version 2.3.0
+	* New:  Added Simple Group module for the Groups Plugin
+
+2013.05.30 - version 2.2.8
+	* Update:  Add filter for loading the modules and the sort order of the modules that will be used to apply a discount. 
+	* Example Usage:  Apply membership discounts first, then process advanced product rules. 
+		add_filter('wc_dynamic_pricing_load_modules', 'custom_dynamic_pricing_module_order');
+		function custom_dynamic_pricing_module_order($modules) {
+			$modules = array();
+
+			$modules['advanced_category'] = WC_Dynamic_Pricing_Advanced_Category::instance();
+			$modules['simple_product'] = WC_Dynamic_Pricing_Simple_Product::instance();
+			$modules['simple_category'] = WC_Dynamic_Pricing_Simple_Category::instance();
+			$modules['simple_membership'] = WC_Dynamic_Pricing_Simple_Membership::instance();
+			//Move advanced product below simple membership
+			$modules['advanced_product'] = WC_Dynamic_Pricing_Advanced_Product::instance();
+			$modules['advanced_totals'] = WC_Dynamic_Pricing_Advanced_Totals::instance();
+
+			return $modules;
+
+		}
+
+		add_filter('woocommerce_dynamic_pricing_is_cumulative', 'custom_dynamic_pricing_cumulative', 10, 4);
+		function custom_dynamic_pricing_cumulative($default, $module_id, $cart_item, $cart_item_key) {
+			if ($module_id == 'advanced_product') {
+				return true;
+			} else {
+				return $default;
+			}
+		}
+
+2013.05.29 - version 2.2.7
+	* Fix: Version 2.2.7 - Block category discounts when discount number was bigger than the required amount. 
+	* Update: Use a new field, display price, to show the source price.  Fixes a problem with prices that included tax displaying incorrectly. 
+
+2013.05.24 - version 2.2.6
+    * Update:  Added woocommerce_dynamic_pricing_process_product_discounts filter to the advanced product module. 
+
+2013.05.24 - version 2.2.5
+    * Fix:  Multiple advanced category rules were only processing the first rule. 
+
+2013.05.15 - version 2.2.4
+    * Update:  Further modification to category calculations so that one item in multiple categories is only counted once. 
+
+2013.05.06 - version 2.2.3
+    * Fix: Fixed pricing rules on advanced products with special offer + buy 1 get 1 repeating. 
+
+2013.05.01 - version 2.2.2
+    * Update: Modification to category calculations so that one item in multiple categories is only counted once. 
+
+2013.04.29 - version 2.2.1
+    * Update:  Use WooCommerce Decimal Count for all calculations
+
+2013.04.09 - version 2.2.0
+    * Added support for simple rules + gravity forms display. 
+
+2013.03.22 - version 2.1.2
+ * Advanced Category Special Offer Tweak for Quantities
+
+2013.03.23 - version 2.1.1
+ * Cart Line Item Quantity in Advanced Categories
+ 
+
+2013.03.22 - version 2.1.0
+ * Dynamic pricing will now update all cart widgets properly. 
+ * WC 2.0 Compatibility with Tax Display in Cart. 
+
+
+2013.03.12 - version 2.0.2
+* Multiple rulesets and individual target variations were not picking the correct ruleset. This has been resolved. 
+
+2013.03.06 - version 2.0.1
+* Updated location of enqueued legacy assets
+
+2013.03.01 - version 2.0
+* Release version for WC 1.6, WC 2.0
+* Added compatibility for WooCommerce 2.0
+* Added buy x adjust y style adjustments to advanced product rules.  This extends Dynamic Pricing from just bulk based pricing adding functionality required to add buy one get one type rules.
+    This feature will allow you to continue to use Bulk based pricing on advanced product rules, or configure special Offer based discounts, allowing users to purchase a set number of items at full price and then receive a set number at a discount.
+* Added buy x adjust y style adjustments to advanced category rules.  This extends Dynamic Pricing from just bulk based pricing adding functionality required to add buy one get one type rules.
+    This feature will allow you to continue to use Bulk based pricing on advanced category rules, or configure special Offer based discounts, allowing users to purchase a set number of items at full price and then receive a set number at a discount.
+* Added targets to advanced category rules, allowing you to discount a quantity which is different from the quantity that was used to build the required amounts to trigger the adjustments.
+*Changed the way prices are modified so that dynamic pricing does not adjust the base price of the product until much later in the processing of the cart.  This allows add-ons to participate in dynamic pricing.
+* Added missing localization strings on admin pages.
+
+
+2012.12.03 - version 1.6.1
+* Fixed settings save error for shop managers
+
+2012.12.03 - version 1.6.0
+* Added a filter - woocommerce_dynamic_pricing_process_product_discounts which allows products to be excluded from discount eligibility.
+* Example use of the filter:
+    add_filter('woocommerce_dynamic_pricing_process_product_discounts', 'is_product_eligible', 10, 4);
+    function is_product_eligible($eligible, $product, $discounter_name, $discounter_object) {
+        if ( $product->is_on_sale() ) {
+            $eligible = false;
+        }
+
+        return $eligible;
+    }
+* New updater
+
+2012.09.11 - version 1.5.0
+* Updated the way quantities are calculated for Advanced Category Pricing.  Products in multiple categories are only counted once now.  Before
+this update a product in the cart with a quantity of 5 and when that product was in two categories would set the quantity for matching to 10.  This update changes that behavior and the product will report to dynamic pricing a quantity of 5.
+
+2012.09.05 - version 1.4.5
+*Fixed issue with simple category rule and the display of variation prices.
+
+2012.08.02 - version 1.4.4
+*Fixed is admin check to account for the AJAX update order totals action
+
+2012.06.22 - version 1.4.3
+*Fixed is admin check to account for the AJAX update order totals action
+
+2012.06.22 - version 1.4.2
+*Added filters to allow filtering the price begin discounted.
+*Fix cumulative membership rules catalog price display.
+
+2012.06.21 - version 1.4.1
+*Fixed missing files issue.
+
+2012.06.21 - version 1.4
+*Added ability to configure cumulative rules with a filter.   The filter is woocommerce_dynamic_pricing_is_cumulative, and takes three arguments.  Argument 1: current filter value, Argument 2: the name of the discounter asking if it should be cumulative, Argument 3: the cart item being discounted.
+
+2012.06.14 - version 1.3.1
+*Fixed issue with multiple category rules
+
+2012.06.14 - version 1.3
+*Added ability to process 0 quantity product based rules
+
+2012.03.12 - version 1.2
+*Fixed references
+*Fixed multiple category rule processing
+
+2012.02.08 - version 1.1.1
+* Removed references
+* Notices
+
+2012.02.08 - version 1.1
+* Added support for discounts based on order totals
+* Added additional option for how Advanced Category Pricing calculates it's total quantities used when applying price adjustments.
+* Label fix
+
+2012.02.07 - version 1.0
+ * First release

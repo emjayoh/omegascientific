@@ -1,0 +1,19 @@
+*** Catalog Visibility Options Changelog ***
+
+2012.04.02 - version 1.1.1
+ * Allow variable products to display price, but hide cart
+
+2012.03.02 - version 1.1
+ *Added filter to allow theme developers to control when users should see prices and be able to make purchases.
+    catalog_visibility_user_has_access
+ *Added filters to allow theme developers to modify the alternate contents
+    catalog_visibility_alternate_content
+    catalog_visibility_alternate_price_html
+    catalog_visibility_alternate_add_to_cart_link
+    catalog_visibility_alternate_add_to_cart_button
+
+2012.02.25 - version 1.0.1
+ * Tweaked WC detection
+
+2012.02.16 - version 1.0
+ * First release

@@ -1,0 +1,19 @@
+*** FedEx ***
+
+2013.05.03 - version 3.1.2
+ * Fixed address validation
+
+2013.04.12 - version 3.1.1
+ * Separate field for fedex freight account number
+ * Fix 'enabled' check for custom box sizes.
+
+2013.04.04 - version 3.1.0
+ * Fix virtual check when box packing
+ * Added FEDEX Freight rates and some new options
+
+2013.01.24 version 3.0.1
+ * Fix currency checks
+
+2013.01.24 version 3.0.0
+ * Complete rewrite using FedEx latest API's
+ * Supports CA and US origins.

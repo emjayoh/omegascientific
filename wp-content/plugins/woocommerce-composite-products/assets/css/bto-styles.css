@@ -1,0 +1,13 @@
+.composited_table_item {
+	font-size: 85%;
+}
+
+.composited_table_item td {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+
+.before-product-name {
+	font-size: 120%;
+	display: block;
+}

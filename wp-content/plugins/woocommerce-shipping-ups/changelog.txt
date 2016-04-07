@@ -1,0 +1,31 @@
+*** UPS Shipping ***
+
+2013.05.22 - version 2.0.6
+ * Change: Packing items individually no longer requires length/width/height to be defined. Can quote with weight only.
+
+2013.04.04 - version 2.0.5
+ * Add check for country, state and zip before requesting rates to reduce number of debug errors displayed on empty cart
+ * Fix for: Invalid argument supplied for foreach() 
+
+2013.03.22 - version 2.0.4
+ * Use origin country setting for requests
+ * Option for using metric measurements
+
+2013.03.04 - version 2.0.3
+ * Add Origin Country/State field for use with Negotiated rates
+ * Negotiated rates fixes
+ * Fix for compatibility with Shipping Multiple Addresses extension (http://www.woothemes.com/products/shipping-multiple-addresses/)
+
+2013.02.05 - version 2.0.2
+ * Updated WC_Boxpack classes to be in sync with other shipping methods.
+
+2013.02.01 - version 2.0.1
+
+ * Added environment check for no credentials, no packaging chosen or defined, and no services chosen.
+ * If packing method is set to "pack boxes" and no UPS packaging nor custom boxes defined will default to individual packing.
+ * Fixed weight calculation. Round up to nearest 1lb for package.
+ * Added better debug reporting when no rates returned.  This could be caused by requesting international rate when shipping domestically.
+
+2013.01.14 - version 2.0.0
+
+ * Complete rewrite using UPS's latest API

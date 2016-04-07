@@ -1,0 +1,27 @@
+*** Elavon VM Gateway Changelog ***
+
+2012.01.23 - version 1.1
+ * WooCommerce 2.0 Compatibility
+
+2012.12.10 - version 1.0.4
+ * Fix - Improved test mode/demo account handling
+ * Fix - Checkout fields containing HTML special characters properly handled
+ * Fix - ssl_customer_code included in transaction (Thanks Nathaniel Schweinberg)
+ * Tweak - removed curl dependency
+ * Tweak - improved dependency checking
+
+2012.12.05 - version 1.0.3
+ * Updater
+
+2012.10.24 - version 1.0.2
+ * Feature - Accepted card type icons automatically displayed in checkout
+ * Feature - Accepted card types can be modified with new filter 'woocommerce_elavon_card_types'
+ * Feature - ssl_salestax included in transaction
+ * Feature - WPML support
+ * Feature - ability to record transaction attempts/communication to a log file
+
+2012.07.26 - version 1.0.1
+ * Fix - American Express accounts now accepted
+
+2012.07.04 - version 1.0
+ * First Release

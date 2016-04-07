@@ -1,0 +1,2 @@
+<!--<div class="span12">--><?php //echo do_shortcode('[wooslider slide_page="homepage-slider" slider_type="slides" limit="3"]'); ?><!--</div>-->
+<div id="layerslider-wrap" class="span12"><?php echo do_shortcode('[layerslider id="7"]'); ?></div>

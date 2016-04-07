@@ -1,0 +1,13 @@
+*** WooCommerce Force Sells ***
+
+2013.01.21 - version 1.1.2
+ * WC 2.0 compat
+
+2012.12.07 - version 1.1.1
+ * Fixed bug where products forcing each other ended up in a loop
+
+2012.12.04 - version 1.1
+ * New updater
+
+2012.05.10 - version 1.0
+ * First release
